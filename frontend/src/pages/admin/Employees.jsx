@@ -29,7 +29,7 @@ const Employees = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await api.post('/employees/register', form);
+      const res = await api.post('/employees', form);
       toast.success(`Employee registered. Temp password: ${res.data.user.tempPassword}`);
       setShowForm(false);
       setForm({ firstName: '', lastName: '', email: '', phone: '', address: '', departmentId: '', designationId: '', joinDate: '', basic: '', hra: '', medical: '', other: '' });

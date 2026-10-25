@@ -8,6 +8,7 @@ const router = express.Router();
 router.get("/", protect, listEmployees);
 router.get("/:id", protect, getEmployee);
 router.post("/", protect, authorize("admin","hr"), registerEmployee);
+router.post("/register", protect, authorize("admin","hr"), registerEmployee);
 router.put("/:id", protect, authorize("admin","hr"), updateEmployee);
 
 export default router;
